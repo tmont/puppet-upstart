@@ -17,7 +17,7 @@ Or simply:
 include upstart
 ```
 
-Creating a job and enabline the service
+Creating a job and enable the service
 ---------------------------------------
 ```puppet
 upstart::job { 'test_service':
