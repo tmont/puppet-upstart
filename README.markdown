@@ -6,28 +6,31 @@ services. It includes support for enabling Upstart's per-user jobs.
 
 Basic Usage
 -----------
-
-    class { 'upstart':
-      user_jobs => true,
-    }
+```puppet
+class { 'upstart':
+  user_jobs => true,
+}
+```
 
 Or simply:
-
-    include upstart
+```puppet
+include upstart
+```
 
 Creating a job and enabline the service
 ---------------------------------------
-
-    upstart::job { 'test_service':
-      description    => "This is an example upstart service",
-      version        => "3626f2",
-      respawn        => true,
-      respawn_limit  => '5 10',
-      user           => 'app-user',
-      group          => 'app-user',
-      chdir          => '/path/to/app',
-      exec           => "start.sh",
-    }
+```puppet
+upstart::job { 'test_service':
+  description    => "This is an example upstart service",
+  version        => "3626f2",
+  respawn        => true,
+  respawn_limit  => '5 10',
+  user           => 'app-user',
+  group          => 'app-user',
+  chdir          => '/path/to/app',
+  exec           => "start.sh",
+}
+```
 
 Dependencies
 ------------
